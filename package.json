@@ -1,5 +1,5 @@
 {
-  "name": "@niivue/niivue",
+  "name": "@ipb/niivue",
   "version": "0.44.2",
   "description": "minimal webgl2 nifti image viewer",
   "types": "./build/index.d.ts",
