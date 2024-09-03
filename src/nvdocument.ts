@@ -114,6 +114,7 @@ export type NVConfigOptions = {
   loadingText: string
   isForceMouseClickToVoxelCenters: boolean
   dragAndDropEnabled: boolean
+  dragAndDropCallback: ((e: DragEvent) => void) | null
   // drawing disabled by default
   drawingEnabled: boolean
   // sets drawing color. see "drawPt"
@@ -192,6 +193,7 @@ export const DEFAULT_OPTIONS: NVConfigOptions = {
   loadingText: 'waiting for images...',
   isForceMouseClickToVoxelCenters: false,
   dragAndDropEnabled: true,
+  dragAndDropCallback: null,
   drawingEnabled: false,
   penValue: 1,
   floodFillNeighbors: 6,

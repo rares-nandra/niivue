@@ -745,6 +745,8 @@ export class Niivue {
   currentDrawUndoBitmap: number
   loadingText: string
 
+  dragAndDropCallback: ((e: DragEvent) => void) | null
+
   /**
    * @param options  - options object to set modifiable Niivue properties
    */
@@ -1920,13 +1922,15 @@ export class Niivue {
   // not included in public docs
   dropListener(e: DragEvent): void {
     e.preventDefault()
-    
+    e.stopPropagation()
+    if (this.dragAndDropCallback) {
+      this.dragAndDropCallback(e)
+    }
+
     // don't do anything if drag and drop has been turned off
     if (!this.opts.dragAndDropEnabled) {
       return
     }
-
-    e.stopPropagation()
 
     const urlsToLoad: string[] = []
     const dt = e.dataTransfer

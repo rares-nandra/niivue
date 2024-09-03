@@ -1,6 +1,6 @@
 {
-  "name": "@ipb/niivue",
-  "version": "0.44.2",
+  "name": "@rares_nandra/niivue",
+  "version": "0.44.3",
   "description": "minimal webgl2 nifti image viewer",
   "types": "./build/index.d.ts",
   "main": "./build/index.js",
@@ -37,7 +37,8 @@
     "lint:fix": "eslint --fix .",
     "lint:debug": "DEBUG=eslint:cli-engine eslint .",
     "pretest-playwright": "npm run build:forTests && node preplaywrighttest.cjs && tsc --incremental -p playwright/e2e/tsconfig.json",
-    "pretest-demos": "npm run build:forTests && node preplaywrighttest.cjs && tsc --incremental -p playwright/e2e/tsconfig.json"
+    "pretest-demos": "npm run build:forTests && node preplaywrighttest.cjs && tsc --incremental -p playwright/e2e/tsconfig.json",
+    "start": "node server.js"
   },
   "files": [
     "src",
@@ -99,5 +100,9 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.18.1"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
   }
 }
