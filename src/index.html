@@ -61,7 +61,9 @@
       <button id="about">About</button>
     </header>
     <main id="canvas-container">
-      <canvas id="gl1"></canvas>
+      <div class="test" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+        <canvas id="gl1"></canvas>
+      </div>
     </main>
     <footer>
       <label id="shaders">Shaders: </label>
@@ -116,7 +118,8 @@
       let defaults = {
         backColor: [0, 0, 0, 1],
         show3Dcrosshair: true,
-        loglevel: 'debug'
+        loglevel: 'debug',
+        dragAndDropEnabled: false,
       };
       var nv1 = new Niivue(defaults);
       nv1.attachToCanvas(gl1);
@@ -155,3 +158,14 @@
     </script>
   </body>
 </html>
+
+<script>
+  function handleDragOver(e) {
+    e.preventDefault();
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    console.log(e);
+  }
+</script>
